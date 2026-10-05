@@ -1,0 +1,774 @@
+/* Display and body fonts. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap');
+
+/* Global font, colours, and smooth scrolling. */
+:root {
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: #111;
+  background: #eeedeb;
+  font-synthesis: none;
+  scroll-behavior: smooth;
+}
+
+/* Basic browser resets. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #202020;
+  color: #fff;
+}
+
+/* Navigation sits over the opening section. */
+.site-header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 4.6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wordmark span {
+  font-weight: 400;
+}
+
+/* Desktop navigation links. */
+.site-header nav {
+  display: flex;
+  gap: 34px;
+}
+
+.site-header nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.site-header nav a:hover,
+.underlink:hover {
+  opacity: .5;
+}
+
+/* The menu button is used only on smaller screens. */
+.menu-button {
+  display: none;
+}
+
+/* Two-column opening section. Picture left, introduction right. */
+.hero {
+  min-height: 100svh;
+  padding: 20vh 4.6% 4%;
+  display: grid;
+  grid-template-columns: 48% 52%;
+  grid-template-rows: 1fr auto;
+  position: relative;
+}
+
+/* Made with CSS shapes. */
+.hero-art {
+  position: relative;
+  height: min(55vh, 530px);
+  min-height: 330px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #cacac8 0%, #deddda 47%, #9d9d9b 100%);
+  filter: grayscale(1);
+  align-self: start;
+  margin-top: 3vh;
+}
+
+
+
+.sky {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 28% 13%, #eee 0%, transparent 50%);
+}
+
+.building {
+  position: absolute;
+  left: -10%;
+  bottom: 13%;
+  width: 108%;
+  height: 61%;
+  background: #e7e6e3;
+  clip-path: polygon(0 42%, 87% 4%, 100% 70%, 100% 100%, 0 100%);
+  box-shadow: 30px 20px 20px #333;
+}
+
+.arch {
+  position: absolute;
+  right: 3%;
+  bottom: 14%;
+  width: 53%;
+  height: 49%;
+  background: #151515;
+  border-radius: 65% 50% 0 0;
+  clip-path: ellipse(68% 64% at 58% 75%);
+}
+
+.arch:after {
+  content: '';
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  width: 34%;
+  height: 40%;
+  background: #737371;
+  box-shadow: 20px 0 #494948;
+}
+
+.spire {
+  position: absolute;
+  left: 35%;
+  top: 16%;
+  height: 45%;
+  width: 1.2%;
+  background: #484848;
+  transform: skew(-2deg);
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(#989895, #bbbcb9);
+}
+
+.art-caption {
+  position: absolute;
+  z-index: 1;
+  bottom: 12px;
+  left: 15px;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+
+/* The hero text stacks the label, name, and bottom links. */
+.hero-copy {
+  padding: 1.4vw 0 0 7%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Shared typography for small labels. */
+.eyebrow,
+.index,
+.small-label,
+.section-note {
+  font-size: 11px;
+  letter-spacing: .17em;
+  font-weight: 600;
+}
+
+.eyebrow {
+  margin: 0 0 32px;
+}
+
+/* clamp() makes the large name responsive. */
+.hero h1 {
+  font-family: 'Italiana', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(70px, 8.2vw, 164px);
+  line-height: .82;
+  letter-spacing: -.085em;
+  margin: 0 0 auto;
+  white-space: nowrap;
+}
+
+.hero-baseline {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.hero-baseline p {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Reusable underlined text link. */
+.underlink {
+  display: inline-flex;
+  gap: 35px;
+  align-items: center;
+  border-bottom: 1px solid #111;
+  padding-bottom: 5px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+
+.hero-footer {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5vh;
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+
+/* Common spacing and headings for the main page sections. */
+.section {
+  padding: 135px 7%;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 7%;
+  align-items: start;
+}
+
+.section-heading .index {
+  grid-row: span 2;
+}
+
+.section h2 {
+  font-family: 'Italiana', Georgia, serif;
+  font-size: clamp(53px, 7vw, 118px);
+  line-height: .98;
+  letter-spacing: -.045em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.section h2 em {
+  font-weight: 400;
+}
+
+.section-heading > p {
+  grid-column: 2;
+  max-width: 450px;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 30px 0 80px;
+}
+
+/* Selected work and clickable project rows. */
+.work-section {
+  background: #e3e2df;
+}
+
+.project-list {
+  border-top: 1px solid #777;
+}
+
+.project-row {
+  border: 0;
+  border-bottom: 1px solid #777;
+  background: transparent;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 1fr 20% 4%;
+  align-items: center;
+  text-align: left;
+  padding: 38px 2px;
+  transition: padding .25s, background .25s;
+}
+
+.project-row:hover {
+  padding-left: 20px;
+  background: #d7d6d2;
+}
+
+.project-number,
+.project-type {
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.project-title {
+  font-family: 'Italiana', Georgia, serif;
+  font-size: clamp(32px, 4.2vw, 70px);
+  line-height: 1;
+}
+
+.project-arrow {
+  font-size: 27px;
+  text-align: right;
+  font-weight: 300;
+}
+
+.section-note {
+  text-align: right;
+  margin: 25px 0 0;
+}
+
+/* About section: biography in two columns and wrapping skill tags. */
+.about-section {
+  background: #f1f0ee;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  margin: 55px 0 100px;
+}
+
+.about-copy {
+  max-width: 590px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.about-copy p {
+  margin: 0 0 25px;
+}
+
+.about-copy .lead {
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 2.4vw, 35px);
+  line-height: 1.35;
+}
+
+.about-copy .underlink {
+  margin-top: 24px;
+}
+
+.skills {
+  border-top: 1px solid #999;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 26px;
+}
+
+.skills span {
+  border: 1px solid #999;
+  border-radius: 100px;
+  padding: 10px 16px;
+  font-size: 10px;
+  letter-spacing: .1em;
+}
+
+/* Experience section. */
+.experience-section {
+  background: #d5d4d0;
+}
+
+.experience-section h2 {
+  margin: 55px 0 100px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  border-top: 1px solid #888;
+}
+
+.experience-grid article {
+  padding-top: 30px;
+}
+
+.experience-grid h3 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(25px, 3vw, 44px);
+  line-height: 1.2;
+}
+
+.experience-grid p {
+  max-width: 510px;
+  line-height: 1.7;
+}
+
+/* Dark contact section and footer links. */
+.contact-section {
+  background: #1a1a1a;
+  color: #eee;
+  padding: 105px 7% 32px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section > p {
+  font-size: 11px;
+  letter-spacing: .15em;
+  margin: 100px 0 15px;
+}
+
+.contact-title {
+  font-family: 'Italiana', Georgia, serif;
+  text-decoration: none;
+  font-size: clamp(90px, 17vw, 280px);
+  line-height: .9;
+  letter-spacing: -.06em;
+  white-space: nowrap;
+}
+
+.contact-title span {
+  font-family: Arial, sans-serif;
+  font-size: .3em;
+  vertical-align: top;
+  margin-left: 20px;
+}
+
+.contact-title:hover {
+  color: #aaa;
+}
+
+.contact-bottom {
+  margin-top: auto;
+  padding-top: 100px;
+  display: flex;
+  gap: 32px;
+  font-size: 10px;
+  letter-spacing: .1em;
+}
+
+.contact-bottom span {
+  margin-right: auto;
+}
+
+.contact-bottom a {
+  text-decoration: none;
+}
+
+/* Backdrop and scrollable project detail panel. */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #111b;
+  z-index: 30;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-modal {
+  position: relative;
+  background: #efeeec;
+  width: min(760px, 100%);
+  height: 100%;
+  overflow: auto;
+  padding: 75px 8% 80px 6%;
+  box-shadow: -15px 0 40px #0002;
+}
+
+.close-button {
+  position: absolute;
+  right: 8%;
+  top: 34px;
+  border: 0;
+  background: transparent;
+  font-size: 11px;
+  letter-spacing: .1em;
+}
+
+.project-modal h2 {
+  font-family: 'Italiana', Georgia, serif;
+  font-size: clamp(62px, 8vw, 110px);
+  font-weight: 400;
+  letter-spacing: -.05em;
+  margin: 35px 0;
+}
+
+
+
+.project-visual span {
+  font-family: 'Italiana', Georgia, serif;
+  font-size: clamp(55px, 7vw, 100px);
+  color: #222;
+}
+
+.modal-summary {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  line-height: 1.35;
+}
+
+.modal-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  margin: 35px 0;
+  padding: 24px 0;
+}
+
+.modal-meta p {
+  line-height: 1.5;
+}
+
+.project-modal h3 {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.project-modal li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.modal-footnote {
+  font-size: 12px;
+  color: #666;
+  margin-top: 40px;
+}
+
+/* Tablet layout: show the menu and stack the hero and section headings. */
+@media (max-width: 800px) {
+  .site-header {
+    position: absolute;
+    padding: 18px 6%;
+  }
+
+  .menu-button {
+    display: block;
+    border: 0;
+    background: none;
+    font-size: 11px;
+    letter-spacing: .13em;
+  }
+
+  .menu-button span {
+    font-size: 18px;
+    margin-left: 7px;
+  }
+
+  .site-header nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 25px 6%;
+    background: #eeedeb;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .site-header nav.open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    padding: 90px 6% 25px;
+  }
+
+  .hero-art {
+    height: 36vh;
+    min-height: 250px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero-copy {
+    padding: 35px 0 0;
+    flex: 1;
+  }
+
+  .eyebrow {
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(62px, 15vw, 120px);
+  }
+
+  .hero-baseline {
+    margin-top: auto;
+    padding: 30px 0;
+  }
+
+  .hero-footer {
+    margin-top: 20px;
+    font-size: 9px;
+  }
+
+  .section {
+    padding: 85px 6%;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading h2 {
+    margin-top: 45px;
+  }
+
+  .section-heading > p {
+    margin: 28px 0 60px;
+  }
+
+  .project-row {
+    grid-template-columns: 11% 1fr 8%;
+    padding: 28px 0;
+  }
+
+  .project-type {
+    display: none;
+  }
+
+  .about-grid {
+    display: block;
+    margin: 45px 0 65px;
+  }
+
+  .about-copy {
+    margin-top: 50px;
+  }
+
+  .experience-section h2 {
+    margin: 45px 0 65px;
+  }
+
+  .experience-grid {
+    gap: 30px;
+  }
+
+  .contact-section {
+    padding: 85px 6% 25px;
+    min-height: 60vh;
+  }
+
+  .contact-section > p {
+    margin: 90px 0 15px;
+  }
+
+  .contact-bottom {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .contact-bottom span {
+    width: 100%;
+  }
+
+  .project-modal {
+    padding: 75px 7%;
+  }
+}
+
+/* Small phone adjustments. */
+@media (max-width: 550px) {
+  .hero h1 {
+    font-size: clamp(56px, 16vw, 86px);
+  }
+
+  .hero-art {
+    height: 31vh;
+  }
+
+  .hero-baseline p {
+    font-size: 14px;
+  }
+
+  .hero-baseline .underlink {
+    font-size: 9px;
+    gap: 8px;
+  }
+
+  .hero-footer span:last-child {
+    display: none;
+  }
+
+  .section h2 {
+    font-size: clamp(52px, 13vw, 76px);
+  }
+
+  .project-title {
+    font-size: 34px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-title {
+    font-size: 20vw;
+  }
+
+  .contact-title span {
+    margin-left: 7px;
+  }
+
+  .modal-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual {
+    height: 200px;
+  }
+}
+
+/* Respect visitors who prefer less animation. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* Make the replacement image fill the existing hero space. */
+.hero-art {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Show two pictures side by side. */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 30px 0;
+}
+
+/* Keep each picture’s proportions without cropping. */
+.project-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Stack the pictures on small phone screens. */
+@media (max-width: 550px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
