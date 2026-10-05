@@ -772,3 +772,27 @@ button {
   }
 }
 
+/* Size the hero photo and crop it neatly without stretching it. */
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: min(55vh, 530px);
+  min-height: 330px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Smaller photo on tablets. */
+@media (max-width: 800px) {
+  .hero-photo {
+    height: 36vh;
+    min-height: 250px;
+  }
+}
+
+/* Smaller photo on phones. */
+@media (max-width: 550px) {
+  .hero-photo {
+    height: 31vh;
+  }
+}
