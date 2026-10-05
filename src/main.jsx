@@ -244,9 +244,11 @@ function App() {
                 and I would love to continue this in any way I can.
               </p>
               {/* The PDF is stored in public/ and is copied into the built site. */}
-              <a className="underlink" href="./Lois-Coughlin-CV.pdf" download>
+             <a
+                className="underlink" href="./Lois-Coughlin-CV.pdf" download
+              >
                 DOWNLOAD MY CV <span aria-hidden="true">↗</span>
-              </a>
+            </a>
             </div>
           </div>
           
